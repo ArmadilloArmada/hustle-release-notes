@@ -1,0 +1,14 @@
+# GitHub repo to watch (owner/name). Override freely.
+repo: cli/cli
+
+# How many recent releases to pull and rewrite.
+release_limit: 1
+
+# Product / brand name used in customer-facing copy.
+product_name: GitHub CLI
+
+# Tone hints for drafts (template + optional LLM).
+tone: friendly, clear, benefit-first — no jargon dumps
+
+# Optional OpenAI model when OPENAI_API_KEY is set.
+openai_model: gpt-4o-mini
