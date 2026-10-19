@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "hustle-release-notes"
-version = "0.1.0"
-description = "Rewrite GitHub release notes into customer-facing changelog + social blurbs"
+version = "0.2.0"
+description = "Rewrite GitHub release notes into customer-facing changelog + social blurbs, with human approve and free export"
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

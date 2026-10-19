@@ -12,3 +12,9 @@ tone: friendly, clear, benefit-first — no jargon dumps
 
 # Optional OpenAI model when OPENAI_API_KEY is set.
 openai_model: gpt-4o-mini
+
+# Free export pack settings (used by `python src/main.py export`).
+# No Discord/email API send — mailto + paste files only.
+export:
+  mailto_to: ""
+  email_subject: ""

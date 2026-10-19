@@ -10,3 +10,7 @@ venv/
 *.md.bak
 out/*
 !out/.gitkeep
+!out/export/
+out/export/*
+!out/export/.gitkeep
+
