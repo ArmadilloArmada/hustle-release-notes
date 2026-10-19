@@ -83,8 +83,8 @@ def _template_draft(
             "",
             "---",
             "",
-            "_Draft only — human approve before publishing. "
-            "No Discord/email push in v1._",
+            "_Draft only — run `python src/main.py approve --yes` then "
+            "`export`. No Discord/email API send._",
             "",
         ]
     )
@@ -117,7 +117,7 @@ def _template_draft(
             "",
             "---",
             "",
-            "_Draft only — human approve before posting._",
+            "_Draft only — approve, then export Discord/email paste snippets._",
             "",
         ]
     )
