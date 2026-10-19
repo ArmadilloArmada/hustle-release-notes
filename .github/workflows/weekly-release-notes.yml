@@ -1,0 +1,47 @@
+# Weekly draft release notes — human reviews / approves / exports locally.
+# Does NOT send email and does NOT post to Discord.
+name: Weekly release notes
+
+on:
+  schedule:
+    # Monday 14:25 UTC
+    - cron: "25 14 * * 1"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Ensure config.yaml
+        run: |
+          if [ ! -f config.yaml ]; then
+            cp config.example.yaml config.yaml
+          fi
+
+      - name: Run release-notes pipeline (draft only)
+        # Template rewrite — no OPENAI_API_KEY required for a usable pack.
+        run: python src/main.py draft
+
+      - name: Upload out/ as draft artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-notes-draft
+          path: out/
+          if-no-files-found: error
+          retention-days: 14

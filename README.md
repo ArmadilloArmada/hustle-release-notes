@@ -81,6 +81,10 @@ python src/main.py export --mailto-to you@example.com --print-mailto
 
 Editing drafts after approve invalidates the stamp — run `approve` again before `export`.
 
+## Weekly schedule (GitHub Actions)
+
+Every Monday at **14:25 UTC**, [`.github/workflows/weekly-release-notes.yml`](.github/workflows/weekly-release-notes.yml) runs a **draft-only** pipeline (`python src/main.py draft`) and uploads artifact **`release-notes-draft`** (no approve/export/send). Download from the Actions run → **Artifacts**, unzip into `out/`, then approve + export locally.
+
 ## Compliance notes
 
 - Uses only the **public GitHub Releases API** — no private repo scraping in v1
